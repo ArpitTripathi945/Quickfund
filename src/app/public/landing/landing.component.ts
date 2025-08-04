@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, LoginComponent, RegisterComponent, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, LoginComponent, RegisterComponent, FooterComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
