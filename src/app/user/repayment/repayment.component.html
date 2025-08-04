@@ -1,1 +1,96 @@
-<p>repayment works!</p>
+<div class="repayment-container">
+  <!-- Header Section -->
+  <div class="header">
+    <div class="back-nav">
+      <button class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Back to Dashboard
+      </button>
+    </div>
+    <div class="header-content">
+      <h1 class="main-title">Make a Repayment</h1>
+      <p class="subtitle">Pay towards your active loans</p>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Left Column - Payment Details -->
+    <div class="payment-details-card">
+      <div class="card-header">
+        <i class="fas fa-file-invoice"></i>
+        <h2>Payment Details</h2>
+      </div>
+      <p class="card-subtitle">Select a loan and enter the payment amount</p>
+      
+      <form class="payment-form">
+        <div class="form-group">
+          <label for="loanSelect">Select Loan</label>
+          <div class="select-wrapper">
+            <select id="loanSelect" class="form-control">
+              <option value="" disabled selected>Choose a loan to pay</option>
+              <option value="loan1">Personal Loan #001</option>
+              <option value="loan2">Business Loan #002</option>
+              <option value="loan3">Emergency Loan #003</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentAmount">Payment Amount</label>
+          <div class="input-wrapper">
+            <i class="fas fa-dollar-sign input-icon"></i>
+            <input 
+              type="number" 
+              id="paymentAmount" 
+              class="form-control" 
+              placeholder="Enter payment amount"
+              min="0"
+              step="0.01"
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentMethod">Payment Method</label>
+          <div class="select-wrapper">
+            <select id="paymentMethod" class="form-control">
+              <option value="" disabled selected>Select payment method</option>
+              <option value="credit-card">Credit Card</option>
+              <option value="debit-card">Debit Card</option>
+              <option value="bank-transfer">Bank Transfer</option>
+              <option value="paypal">PayPal</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow"></i>
+          </div>
+        </div>
+
+        <button type="submit" class="process-payment-btn">
+          Process Payment
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Column - Information Panels -->
+    <div class="info-panels">
+      <!-- Select a Loan Panel -->
+      <div class="info-card">
+        <div class="info-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h3>Select a Loan</h3>
+        <p>Choose a loan from the dropdown to see its details</p>
+      </div>
+
+      <!-- Recent Payments Panel -->
+      <div class="info-card">
+        <div class="info-header">
+          <i class="fas fa-calendar-alt"></i>
+          <h3>Recent Payments</h3>
+        </div>
+        <p>Select a loan to view payment history</p>
+      </div>
+    </div>
+  </div>
+</div>
