@@ -1,1 +1,71 @@
-<p>login works!</p>
+<div class="container p-4">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="card p-4 shadow-sm border-0">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+          <input 
+            type="email" 
+            class="form-control" 
+            id="email" 
+            formControlName="email"
+          />
+        </div>
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="text-danger mt-1 small">
+          Valid email is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-lock"></i></span>
+          <input 
+            [type]="showPassword ? 'text' : 'password'" 
+            class="form-control" 
+            id="password" 
+            formControlName="password"
+          />
+          <button 
+            type="button" 
+            class="btn btn-outline-secondary" 
+            (click)="togglePassword()" 
+            tabindex="-1">
+            <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+          </button>
+        </div>
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="text-danger mt-1 small">
+          Password is required.
+        </div>
+      </div>
+  
+      <div class="d-grid mb-3">
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+          Sign In
+        </button>
+      </div>
+  
+      <div class="text-center">
+        <button 
+          type="button" 
+          class="btn btn-link p-0" 
+          (click)="onForgotPassword()"
+        >
+          Forgot Password?
+        </button>
+      </div>
+  
+      <div class="text-center mt-3">
+        <span class="text-muted">Don't have an account?</span>
+        <button class="btn btn-link p-0" (click)="switchToRegister.emit()">Sign up</button>
+      </div>
+  
+      <div class="alert alert-secondary mt-4">
+        <strong>Demo credentials:</strong><br>
+        <small>Customer: customer"&#64;"quickfund.com</small><br>
+        <small>Admin: admin"&#64;"quickfund.com</small><br>
+        <small>Password: any password</small>
+      </div>
+    </form>
+  </div>
+  

@@ -6,11 +6,15 @@ import { LoanHistoryComponent } from './user/loan-history/loan-history.component
 import { RepaymentComponent } from './user/repayment/repayment.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { LandingComponent } from './public/landing/landing.component';
+
 
 export const routes: Routes = [
   {
-    path: 'user',
-    component: UserLayoutComponent,
+    path: '' , component: LandingComponent,
+  },
+  {
+    path: 'user', component: UserLayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'apply-loan', component: LoanApplicationComponent },
@@ -19,6 +23,6 @@ export const routes: Routes = [
       { path: 'repayment', component: RepaymentComponent }
     ]
   },
-  { path: '', redirectTo: '/user/dashboard', pathMatch: 'full' },
+  // { path: '', redirectTo: '/user/dashboard', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
