@@ -2,7 +2,7 @@
 .repayment-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 2rem;
+  padding: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -11,8 +11,15 @@
   margin-bottom: 3rem;
 }
 
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
 .back-nav {
-  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 .back-button {
@@ -37,18 +44,19 @@
 }
 
 .header-content {
+  flex: 1;
   text-align: left;
 }
 
 .main-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #2d3748;
   margin: 0 0 0.5rem 0;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #718096;
   margin: 0;
 }
@@ -66,7 +74,7 @@
 .payment-details-card {
   background: white;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   border: 1px solid #e2e8f0;
 }
@@ -92,7 +100,7 @@
 
 .card-subtitle {
   color: #718096;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 0.95rem;
 }
 
@@ -100,7 +108,7 @@
 .payment-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .form-group {
@@ -266,6 +274,12 @@
 @media (max-width: 768px) {
   .repayment-container {
     padding: 1rem;
+  }
+  
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
   
   .main-title {
