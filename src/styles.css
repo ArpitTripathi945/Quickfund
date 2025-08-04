@@ -1,6 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-<<<<<<< HEAD
-=======
 :root {
   --primary-gradient: linear-gradient(to right, #007bff, #00c875);
   --primary-color: #0051ff;
@@ -24,4 +22,4 @@ body {
   justify-content: center;
   font-size: 18px;
 }
->>>>>>> 2ca223d7 (Implemented Project Structure,Routing and navbar)
+
