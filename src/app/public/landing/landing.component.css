@@ -1,4 +1,8 @@
 
+.mx-7{
+    margin-left: 7rem;
+    margin-right: 7rem;
+}
 
 .card {
     border-radius: 1rem;
@@ -15,6 +19,10 @@
     background-clip: text;
     color: transparent;
   
+}
+
+.container-color {
+    background: var(--soft-gradient);
 }
 
 .bold {
@@ -35,4 +43,23 @@
   align-items: center;
   justify-content: center;
 }
+
+.offcanvas-custom {
+    width: 90vw;
+}
+  
+ 
+@media (min-width: 768px) {
+    .offcanvas-custom {
+      width: 50vw;
+    }
+}
+  
+
+@media (min-width: 992px) {
+    .offcanvas-custom {
+      width: 40vw;
+    }
+}
+  
 

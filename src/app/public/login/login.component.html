@@ -1,13 +1,13 @@
-<div class="container p-4">
+<div class="container px-4">
   <div>
-    <h2 class="fw-bold text-dark">Welcome Back</h2>
+    <strong class = "qf-logo mb-3">QF</strong>
+    <h4 class="fw-bold text-dark">Welcome Back!</h4>
     <p class="text-muted mb-3">Sign in to your QuickFund account to access your dashboard.</p>
   </div>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="border-0">
-      <div class="mb-3">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-2">
         <label for="email" class="form-label">Email address</label>
-        <div class="input-group">
-          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+        <div class="input-group">       
           <input 
             type="email" 
             class="form-control" 
@@ -20,10 +20,9 @@
         </div>
       </div>
   
-      <div class="mb-3">
+      <div class="mb-2">
         <label for="password" class="form-label">Password</label>
         <div class="input-group">
-          <span class="input-group-text"><i class="bi bi-lock"></i></span>
           <input 
             [type]="showPassword ? 'text' : 'password'" 
             class="form-control" 
@@ -43,7 +42,7 @@
         </div>
       </div>
   
-      <div class="d-grid mb-3">
+      <div class="d-grid py-3">
         <button type="submit" class="btn btn-bg-primary">
           Sign In
         </button>
@@ -66,8 +65,8 @@
   
       <div class="alert alert-secondary mt-4">
         <strong>Demo credentials:</strong><br>
-        <small>Customer: customer"&#64;"quickfund.com</small><br>
-        <small>Admin: admin"&#64;"quickfund.com</small><br>
+        <small>Customer: customer&#64;quickfund.com</small><br>
+        <small>Admin: admin&#64;quickfund.com</small><br>
         <small>Password: any password</small>
       </div>
     </form>
