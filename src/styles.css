@@ -32,6 +32,10 @@ body {
   color: white;
 }
 
+.btn-bg-secondary:hover{
+  background: var(--soft-gradient);
+}
+
 .text-bg-primary{
   background: var(--primary-gradient);
   -webkit-background-clip: text;
