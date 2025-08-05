@@ -4,6 +4,7 @@
 :root {
   --primary-color: #0051ff;
   --secondary-color: #02b46a;
+   --orange: #f97316;
   --primary-gradient: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   --multi-color-gradient: linear-gradient(to right, #2563eb, #9f28f9, #16a34a);
   --soft-gradient: linear-gradient(to right, #dbeafe, #d1fae5);
