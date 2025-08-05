@@ -13,3 +13,13 @@
   color: #000000 !important; 
   opacity: 1 !important; 
 }
+
+body {
+  padding-top: 70px;
+}
+
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 56px;
+  }
+}

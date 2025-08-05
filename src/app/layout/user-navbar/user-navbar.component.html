@@ -1,31 +1,51 @@
-<nav class="navbar navbar-expand-lg shadow">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
+  <div class="container-fluid">
+    <!-- Brand -->
     <div class="d-flex align-items-center">
       <div class="qf-logo fw-bold fs-5 me-2">QF</div>
       <div class="fs-5 fw-bold text-black">QuickFund</div>
     </div>
 
-    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex flex-row gap-4">
-      <li class="nav-item">
-        <a class="nav-link text-black fw-semibold" routerLink="/user/dashboard">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-black fw-semibold" routerLink="/user/apply-loan">Apply Loan</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-black fw-semibold" routerLink="/user/repayment">Repayment</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-black fw-semibold" routerLink="/user/history">History</a>
-      </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link text-black fw-semibold" routerLink="/user/profile">Profile</a>
-      </li> -->
-    </ul>
+    <!-- Hamburger toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <a href="#" class="d-flex align-items-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile" width="32" height="32" class="rounded-circle" />
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-column flex-lg-row gap-lg-4">
+        <li class="nav-item">
+          <a class="nav-link text-black fw-semibold" routerLink="/user/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black fw-semibold" routerLink="/user/apply-loan">Apply Loan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black fw-semibold" routerLink="/user/repayment">Repayment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black fw-semibold" routerLink="/user/history">History</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Profile image -->
+    <a href="#" class="d-none d-lg-flex align-items-center">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        alt="Profile"
+        width="32"
+        height="32"
+        class="rounded-circle"
+      />
     </a>
-
   </div>
 </nav>
