@@ -7,7 +7,7 @@ import { RepaymentComponent } from './user/repayment/repayment.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { LandingComponent } from './public/landing/landing.component';
-
+import { ApprovalsComponent } from './admin/approvals/approvals.component';
 
 export const routes: Routes = [
   {
@@ -22,6 +22,9 @@ export const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'repayment', component: RepaymentComponent }
     ]
+  },
+  {
+    path:'admin/approval',component:ApprovalsComponent
   },
   // { path: '', redirectTo: '/user/dashboard', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
