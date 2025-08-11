@@ -18,6 +18,9 @@ body {
   padding-top: 70px;
 }
 
+.pro{
+  background: linear-gradient(to bottom right, #7aaedc, #66eacb);
+}
 @media (max-width: 991.98px) {
   body {
     padding-top: 56px;
