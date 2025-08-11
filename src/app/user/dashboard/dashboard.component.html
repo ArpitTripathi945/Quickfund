@@ -1,4 +1,4 @@
-<!-- <div class="dashboard-wrapper container-fluid">
+<div class="dashboard-wrapper container-fluid">
   <div class="row justify-content-center">
     <div class="col-lg-9 col-12">
       <div class="d-flex justify-content-between align-items-center mb-4">
@@ -62,10 +62,13 @@
         </div>
       </div>
 
-
       <div class="row g-3 mb-4">
         <div class="col-md-4">
-          <div class="card action-card d-flex flex-row align-items-center">
+          <div
+            class="card action-card d-flex flex-row align-items-center"
+            style="cursor: pointer"
+            routerLink="/user/apply-loan"
+          >
             <div class="icon-box plus">
               <i class="bi bi-plus-circle fs-5 fw-bold"></i>
             </div>
@@ -77,7 +80,11 @@
         </div>
 
         <div class="col-md-4">
-          <div class="card action-card d-flex flex-row align-items-center">
+          <div
+            class="card action-card d-flex flex-row align-items-center"
+            style="cursor: pointer"
+            routerLink="/user/repayment"
+          >
             <div class="icon-box repeat fs-5 fw-bold">
               <i class="bi bi-repeat"></i>
             </div>
@@ -89,7 +96,11 @@
         </div>
 
         <div class="col-md-4">
-          <div class="card action-card d-flex flex-row align-items-center p-1">
+          <div
+            class="card action-card d-flex flex-row align-items-center p-1"
+            style="cursor: pointer"
+            routerLink="/user/history"
+          >
             <div class="icon-box clock fs-5 fw-bold">
               <i class="bi bi-clock-history"></i>
             </div>
@@ -143,11 +154,11 @@
               >
                 {{ recentLoan?.status.toLowerCase() }}
               </span>
-               <span class="ms-2 text-muted small">{{ recentLoanDate }}</span> 
+              <!-- <span class="ms-2 text-muted small">{{ recentLoanDate }}</span>  -->
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>

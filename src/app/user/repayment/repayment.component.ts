@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-repayment',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, RouterModule, CommonModule],
   templateUrl: './repayment.component.html',
   styleUrl: './repayment.component.css'
 })

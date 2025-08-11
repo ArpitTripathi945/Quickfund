@@ -7,7 +7,12 @@ import { RepaymentComponent } from './user/repayment/repayment.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { LandingComponent } from './public/landing/landing.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { ApprovalsComponent } from './admin/approvals/approvals.component';
+import { ReportsComponent } from './admin/reports/reports.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+
+
 
 export const routes: Routes = [
   {
@@ -24,8 +29,14 @@ export const routes: Routes = [
     ]
   },
   {
-    path:'admin/approval',component:ApprovalsComponent
+    path: 'admin', component: AdminLayoutComponent,
+    children: [
+      { path: 'dashboard', component: AdminDashboardComponent },
+      { path: 'approve', component: ApprovalsComponent },
+      { path: 'reports', component: ReportsComponent },
+      { path: 'profile', component: ProfileComponent },
+    ]
   },
-  // { path: '', redirectTo: '/user/dashboard', pathMatch: 'full' },
+
   { path: '**', component: NotFoundComponent }
 ];
