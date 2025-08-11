@@ -13,6 +13,7 @@ import { ReportsComponent } from './admin/reports/reports.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
 
+
 export const routes: Routes = [
   {
     path: '' , component: LandingComponent,
@@ -36,5 +37,6 @@ export const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
     ]
   },
+
   { path: '**', component: NotFoundComponent }
 ];
