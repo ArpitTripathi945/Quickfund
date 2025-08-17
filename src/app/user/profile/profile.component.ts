@@ -1,48 +1,64 @@
-import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from "@angular/forms";
-import { RouterModule } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UserService } from '../../core/user.service'; 
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: "app-profile",
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule],
-  templateUrl: "./profile.component.html",
-  styleUrl: "./profile.component.css",
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css'],
+  imports: [
+    CommonModule,        // ✅ for *ngIf, *ngFor, ngClass
+    ReactiveFormsModule  // ✅ for [formGroup], formControlName
+  ],
+  standalone: true
 })
-export class ProfileComponent {
-  activeTab = "profile";
+export class ProfileComponent implements OnInit {
+  activeTab: 'profile' | 'security' = 'profile';
+  user: any;
   passwordForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: UserService) {
     this.passwordForm = this.fb.group(
       {
-        currentPassword: ["", Validators.required],
-        newPassword: ["", [Validators.required, Validators.minLength(6)]],
-        confirmPassword: ["", Validators.required],
+        currentPassword: ['', Validators.required],
+        newPassword: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', Validators.required]
       },
-      { validators: this.matchPasswords }
+      { validators: this.passwordsMatch }
     );
   }
 
-  matchPasswords(group: FormGroup) {
-    const newPassword = group.get("newPassword")?.value;
-    const confirmPassword = group.get("confirmPassword")?.value;
-    return newPassword === confirmPassword ? null : { mismatch: true };
+  ngOnInit(): void {
+    const userId = Number(localStorage.getItem('userId'));
+    if (userId) {
+      this.userService.getUserById(userId).subscribe({
+        next: (res) => {
+          this.user = res;
+          console.log('👤 User profile loaded:', this.user);
+        },
+        error: (err) => {
+          console.error('❌ Failed to fetch user:', err);
+        }
+      });
+    }
   }
 
-  updatePassword() {
+  updatePassword(): void {
     if (this.passwordForm.valid) {
-      console.log("Password Updated:", this.passwordForm.value);
-      alert("Password updated successfully!");
-      this.passwordForm.reset();
-    } else {
-      this.passwordForm.markAllAsTouched();
+      const userId = Number(localStorage.getItem('userId'));
+      const { currentPassword, newPassword } = this.passwordForm.value;
+
+      this.userService.updatePassword(userId, { currentPassword, newPassword }).subscribe({
+        next: () => alert('✅ Password updated successfully'),
+        error: (err) => alert('❌ Failed to update password: ' + err.message)
+      });
     }
+  }
+
+  private passwordsMatch(form: FormGroup) {
+    const newPassword = form.get('newPassword')?.value;
+    const confirmPassword = form.get('confirmPassword')?.value;
+    return newPassword === confirmPassword ? null : { mismatch: true };
   }
 }

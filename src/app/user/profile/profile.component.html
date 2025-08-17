@@ -52,12 +52,12 @@
             class="rounded-circle text-white d-flex justify-content-center align-items-center"
             style="width: 70px; height: 70px; font-size: 24px; background: var(--primary-gradient);"
           >
-            JD
+            {{ user?.name?.charAt(0) }}{{ user?.name?.split(' ')[1]?.charAt(0) }}
           </div>
           <div class="ms-3">
-            <h6 class="mb-0">John Doe</h6>
-            <div class="text-muted">customer&#64;quickfund.com</div>
-            <span class="badge bg-success mt-1">customer</span>
+            <h6 class="mb-0">{{ user?.name }}</h6>
+            <div class="text-muted">{{ user?.email }}</div>
+            <span class="badge bg-success mt-1">{{ user?.role }}</span>
           </div>
           <div class="ms-auto">
             <button class="btn btn-outline-secondary btn-sm">
@@ -69,30 +69,26 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label class="form-label">Full Name</label>
-            <input class="form-control p-1" disabled value="John Doe" />
+            <input class="form-control p-1" disabled [value]="user?.name" />
           </div>
           <div class="col-md-6 mb-3">
             <label class="form-label">Email Address</label>
-            <input
-              class="form-control p-1"
-              disabled
-              value="customer&#64;quickfund.com"
-            />
+            <input class="form-control p-1" disabled [value]="user?.email" />
           </div>
           <div class="col-md-6 mb-3">
             <label class="form-label ">Phone Number</label>
-            <input class="form-control p-1" disabled value="+1 (555) 987-6543" />
+            <input class="form-control p-1" disabled [value]="user?.phone" />
           </div>
           <div class="col-md-6 mb-3">
             <label class="form-label ">Date Joined</label>
-            <input class="form-control p-1" disabled value="2024-01-20" />
+            <input class="form-control p-1" disabled [value]="user?.details.dateJoined" />
           </div>
           <div class="col-12 mb-3">
             <label class="form-label">Address</label>
             <input
               class="form-control p-1 pb-5"
               disabled
-              value="456 Customer Ave, City, State 67890"
+              [value]="user?.details.address"
             />
           </div>
         </div>
